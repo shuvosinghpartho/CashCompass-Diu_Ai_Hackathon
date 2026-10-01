@@ -1,0 +1,803 @@
+@media (max-width: 1280px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    width: 240px;
+  }
+  .main-content {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .system-ribbon {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .content-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-footer-bar {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .coach-actions-cluster {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1080px) {
+  .mfs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vault-panel {
+    grid-template-columns: 44px minmax(0, 1fr) minmax(160px, 0.8fr);
+  }
+
+  .vault-panel .btn-action-primary {
+    grid-column: 2 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 124px;
+  }
+
+  .forecast-section,
+  .insights-grid,
+  .coach-card,
+  .mfs-section,
+  .audit-panel,
+  #reserve-vault {
+    scroll-margin-top: 124px;
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "brand switcher" "nav nav";
+    align-items: center;
+    gap: 9px 14px;
+    position: sticky;
+    top: 0;
+    height: auto;
+    max-height: none;
+    align-self: stretch;
+    overflow: visible;
+    z-index: 90;
+    padding: 10px 14px 8px;
+    background: var(--bg-secondary);
+  }
+
+  .brand-header {
+    grid-area: brand;
+    margin: 0;
+  }
+
+  .brand-logo-wrap {
+    gap: 8px;
+  }
+
+  .logo-box {
+    padding: 4px 9px;
+    font-size: 1.05rem;
+  }
+
+  .brand-tag h2 {
+    font-size: 0.94rem;
+  }
+
+  .version-tag,
+  .nav-section-title,
+  .sidebar-footer,
+  .persona-helper {
+    display: none;
+  }
+
+  .nav-links {
+    grid-area: nav;
+    flex-direction: row;
+    gap: 4px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-link {
+    min-height: 38px;
+    flex: 0 0 auto;
+    gap: 7px;
+    padding: 8px 10px;
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  .nav-item.active .nav-link {
+    border-left: 0;
+    border-radius: 7px;
+  }
+
+  .persona-switch-card {
+    grid-area: switcher;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .persona-options {
+    flex-direction: row;
+    gap: 4px;
+  }
+
+  .persona-btn {
+    width: 34px;
+    height: 34px;
+    justify-content: center;
+    padding: 2px;
+  }
+
+  .persona-info {
+    display: none;
+  }
+
+  .avatar-wrap {
+    width: 27px;
+    height: 27px;
+  }
+
+  .system-ribbon {
+    position: static;
+    padding: 6px 14px;
+  }
+
+  .ribbon-content {
+    flex-wrap: wrap;
+    gap: 5px 7px;
+  }
+
+  .ribbon-right,
+  .divider,
+  .track-badge {
+    display: none;
+  }
+
+  .main-content {
+    gap: 20px;
+    padding: 20px 14px 26px;
+  }
+
+  .content-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .page-title {
+    font-size: 1.3rem;
+  }
+
+  .kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .kpi-card {
+    gap: 10px;
+    padding: 13px;
+  }
+
+  .kpi-icon-box {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+
+  .kpi-label {
+    font-size: 0.66rem;
+  }
+
+  .kpi-value {
+    font-size: 1.25rem;
+  }
+
+  .chart-canvas-wrapper {
+    height: 270px;
+  }
+
+  .chart-legend-custom {
+    gap: 8px 12px;
+  }
+
+  .section-card {
+    padding: 17px;
+  }
+
+  .card-header-flex,
+  .mfs-heading {
+    flex-wrap: wrap;
+  }
+
+  .mfs-heading {
+    align-items: flex-start;
+  }
+
+  .vault-panel {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .vault-progress-wrap,
+  .vault-panel .btn-action-primary {
+    grid-column: 1 / -1;
+  }
+
+  .vault-panel .btn-action-primary {
+    min-height: 42px;
+  }
+
+  .audit-panel {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .audit-status {
+    margin-left: 56px;
+  }
+
+  .app-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-link .counter-badge {
+    display: none;
+  }
+
+  .nav-link {
+    justify-content: center;
+    padding-inline: 8px;
+    font-size: 0.66rem;
+  }
+
+  .kpi-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .kpi-icon-box {
+    display: none;
+  }
+
+  .kpi-card {
+    padding: 12px 10px;
+  }
+
+  .wallet-actions {
+    gap: 5px;
+  }
+
+  .mfs-action-btn {
+    min-height: 60px;
+    font-size: 0.61rem;
+  }
+
+  .transaction-row {
+    grid-template-columns: 32px minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+
+  .transaction-amount {
+    font-size: 0.68rem;
+  }
+
+  .zone-badge {
+    align-items: flex-start;
+    font-size: 0.76rem;
+  }
+
+  .header-actions .action-btn {
+    padding: 9px 11px;
+    font-size: 0.74rem;
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 769px) {
+  .sidebar {
+    width: 236px;
+    flex-basis: 236px;
+    padding-inline: 12px;
+  }
+
+  .main-content {
+    padding-inline: 16px;
+  }
+
+  .mfs-section .mfs-grid {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  }
+
+  .vault-view .vault-panel {
+    grid-template-columns: 44px minmax(0, 1fr) minmax(170px, 0.8fr);
+  }
+
+  .vault-view .vault-funding-controls {
+    grid-column: 2 / -1;
+  }
+
+  .trust-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    display: flex;
+    height: 100dvh;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    z-index: 90;
+    display: flex;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: visible;
+    padding: 9px 14px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border-subtle);
+    background: var(--bg-secondary);
+    box-shadow: 0 4px 12px rgba(16, 35, 29, 0.04);
+  }
+
+  .brand-header {
+    width: 100%;
+    margin: 0;
+  }
+
+  .brand-logo-wrap {
+    gap: 9px;
+  }
+
+  .logo-box {
+    width: 36px;
+    font-size: 1.1rem;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .brand-tag h2 {
+    font-size: 0.95rem;
+  }
+
+  .version-tag {
+    font-size: 0.58rem;
+  }
+
+  .menu-toggle {
+    display: grid;
+    width: 36px;
+    aspect-ratio: 1;
+    place-items: center;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    background: var(--bg-surface);
+    color: var(--text-main);
+    cursor: pointer;
+  }
+
+  .nav-section-title,
+  .nav-links,
+  .persona-switch-card,
+  .sidebar-footer {
+    display: none;
+  }
+
+  .sidebar.nav-open .nav-section-title {
+    display: block;
+    margin: 13px 4px 7px;
+  }
+
+  .sidebar.nav-open .nav-links {
+    display: flex;
+    max-height: min(48dvh, 360px);
+    flex-direction: column;
+    gap: 3px;
+    overflow-y: auto;
+    padding: 4px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 9px;
+    background: var(--bg-surface);
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+
+  .sidebar.nav-open .persona-switch-card {
+    display: block;
+    margin: 10px 0 0;
+  }
+
+  .sidebar.nav-open .persona-options {
+    flex-direction: row;
+  }
+
+  .sidebar.nav-open .persona-btn {
+    width: 50%;
+  }
+
+  .sidebar.nav-open .persona-info {
+    display: block;
+  }
+
+  .sidebar.nav-open .persona-info strong {
+    font-size: 0.72rem;
+  }
+
+  .sidebar.nav-open .persona-info span {
+    font-size: 0.62rem;
+  }
+
+  .nav-link {
+    min-height: 39px;
+    flex: 0 0 auto;
+    gap: 10px;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  .nav-item.active .nav-link {
+    border-left: 3px solid var(--brand-blue);
+    border-radius: 7px;
+  }
+
+  .main-content {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    flex: 1 1 auto;
+    gap: 10px;
+    padding: 11px 12px 12px;
+  }
+
+  .content-header {
+    min-height: 54px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+
+  .breadcrumb {
+    display: none;
+  }
+
+  .page-title {
+    max-width: 42vw;
+    overflow: hidden;
+    font-size: 0.98rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .header-actions {
+    width: auto;
+    gap: 6px;
+  }
+
+  .live-date-pill,
+  .trust-indicator {
+    display: none;
+  }
+
+  .header-actions .action-btn {
+    min-height: 36px;
+    padding: 7px 9px;
+    font-size: 0.68rem;
+  }
+
+  .theme-toggle {
+    width: 36px;
+  }
+
+  .main-content > .page-view[data-view="forecast"] {
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .dashboard-view .kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .dashboard-view .kpi-card {
+    gap: 7px;
+    padding: 9px;
+  }
+
+  .dashboard-view .kpi-icon-box {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+
+  .dashboard-view .kpi-label {
+    font-size: 0.56rem;
+  }
+
+  .dashboard-view .kpi-value {
+    font-size: 1.05rem;
+  }
+
+  .dashboard-view .kpi-subtext {
+    font-size: 0.57rem;
+  }
+
+  .dashboard-view .risk-badge {
+    font-size: 0.52rem;
+  }
+
+  .dashboard-view .chart-card {
+    padding: 12px;
+  }
+
+  .dashboard-view .card-header-flex {
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .dashboard-view .title-with-pill {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .dashboard-view .card-title {
+    font-size: 0.88rem;
+  }
+
+  .dashboard-view .card-desc {
+    font-size: 0.66rem;
+  }
+
+  .dashboard-view .chart-legend-custom {
+    gap: 4px 8px;
+  }
+
+  .dashboard-view .legend-item {
+    gap: 4px;
+    font-size: 0.56rem;
+  }
+
+  .dashboard-view .chart-canvas-wrapper {
+    min-height: 100px;
+  }
+
+  .dashboard-view .chart-footer-bar {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .dashboard-view .zone-badge {
+    font-size: 0.63rem;
+  }
+
+  .dashboard-view .btn-sm {
+    padding: 6px 8px;
+    font-size: 0.62rem;
+  }
+
+  .xai-card,
+  .coach-card {
+    padding: 14px;
+  }
+
+  .mfs-section .mfs-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 9px;
+  }
+
+  .mfs-section .mfs-heading {
+    align-items: center;
+  }
+
+  .mfs-section .page-section-title {
+    font-size: 1.02rem;
+  }
+
+  .mfs-section .wallet-overview {
+    padding: 13px;
+  }
+
+  .mfs-section .wallet-account {
+    margin-top: 10px;
+  }
+
+  .mfs-section .wallet-balance-label {
+    margin-top: 8px;
+  }
+
+  .mfs-section .wallet-balance {
+    font-size: 1.55rem;
+  }
+
+  .mfs-section .wallet-note {
+    margin-top: 2px;
+  }
+
+  .mfs-section .wallet-actions {
+    margin-top: 12px;
+  }
+
+  .mfs-section .mfs-action-btn {
+    min-height: 50px;
+    gap: 4px;
+    font-size: 0.58rem;
+  }
+
+  .mfs-section .activity-panel {
+    padding: 12px;
+  }
+
+  .mfs-section .transaction-row {
+    min-height: 44px;
+  }
+
+  .vault-view .vault-panel {
+    min-height: 0;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .vault-view .vault-progress-wrap,
+  .vault-view .vault-funding-controls {
+    grid-column: 1 / -1;
+  }
+
+  .vault-view {
+    overflow-y: auto !important;
+    align-content: start !important;
+    padding-bottom: 6px;
+  }
+
+  .forecast-controls {
+    width: 100%;
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+
+  .recommendation-list {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendation-item {
+    min-height: 0;
+  }
+
+  .audit-view {
+    overflow-y: auto !important;
+    align-content: start !important;
+    padding-bottom: 8px;
+  }
+
+  .audit-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .model-health-card {
+    grid-column: auto;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .activity-tools {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .filter-button {
+    padding-inline: 6px;
+    font-size: 0.6rem;
+  }
+
+  .vault-funding-controls {
+    width: 100%;
+  }
+
+  .vault-view .vault-panel .btn-action-primary {
+    min-height: 40px;
+  }
+
+  .audit-view .audit-panel {
+    flex-wrap: wrap;
+    padding: 16px;
+  }
+
+  .audit-view-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .audit-view-header .quiet-action {
+    align-self: flex-start;
+  }
+
+  .audit-view .audit-status {
+    margin-left: 52px;
+  }
+}
+
+@media (max-height: 720px) and (min-width: 769px) {
+  .sidebar {
+    padding-block: 12px;
+  }
+
+  .brand-header {
+    margin-bottom: 12px;
+  }
+
+  .nav-section-title {
+    margin-block: 8px 5px;
+  }
+
+  .nav-links {
+    max-height: 34vh;
+  }
+
+  .dashboard-view .kpi-card {
+    padding-block: 9px;
+  }
+
+  .dashboard-view .chart-card {
+    padding: 12px;
+  }
+}
