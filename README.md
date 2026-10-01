@@ -1,115 +1,131 @@
-# CashCompass 🧭 - DIU AI Hackathon 
-
 <div align="center">
-  <img src="frontend/assets/images/cashcompass-logo.svg" alt="CashCompass Logo" width="120" height="120">
-  <p><b>Financial Health & Liquidity Workspace for the Next Billion Users</b></p>
+  <img src="frontend/assets/images/cashcompass-logo.svg" alt="CashCompass Logo" width="150" height="150">
+  
+  # 🧭 CashCompass
+  **The Financial Health & Liquidity Workspace for the Next Billion Users**
+  
+  [![Hackathon](https://img.shields.io/badge/Event-DIU_AI_Hackathon-2E86C1?style=for-the-badge&logo=hackaday)](https://daffodilvarsity.edu.bd/)
+  [![Python](https://img.shields.io/badge/Python-3.10+-F1C40F?style=for-the-badge&logo=python&logoColor=white)]()
+  [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)]()
+  [![XGBoost](https://img.shields.io/badge/XGBoost-Models-red?style=for-the-badge)]()
+  [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)]()
+
+  <p align="center">
+    <a href="#-the-problem">The Problem</a> •
+    <a href="#-our-solution">Our Solution</a> •
+    <a href="#-key-innovations">Innovations</a> •
+    <a href="#-system-architecture">Architecture</a> •
+    <a href="#-getting-started">Getting Started</a>
+  </p>
 </div>
 
 ---
 
-## 📖 Overview
-**CashCompass** is a predictive financial health assistant designed for MFS (Mobile Financial Services) users in Bangladesh. Built for the **DIU AI Hackathon**, it leverages Explainable AI (XAI) and deterministic behavioral modeling to help low-to-middle-income users avoid liquidity crunches, manage avoidable fee leakages, and build emergency savings buffers.
+## 🚨 The Problem
+In emerging markets like Bangladesh, millions of Mobile Financial Services (MFS) users live paycheck to paycheck. Traditional banking apps only show *current* balances, leaving users blind to **future liquidity crunches**. This leads to:
+- **Avoidable Fee Leakage**: Paying high cash-out fees today, only to lack funds for a digital utility bill tomorrow.
+- **Predatory Debt Traps**: Taking high-interest micro-loans due to poor cash-flow visibility.
+- **Financial Stress**: Anxiety driven by unexpected expenses and lack of an emergency buffer.
 
-## ✨ Key Features
-- **🔮 Liquidity Forecasting**: Probabilistic 30-day cash-flow modeling predicting exact dates of potential deficit breaches.
-- **🤖 Explainable AI (TreeSHAP)**: Fully transparent, non-black-box insights detailing *why* a user is at risk (e.g., "High cash-out velocity").
-- **💬 Bangla Copilot**: A grounded, responsible advisory engine providing plain-language (Bengali) actionable steps without predatory lending traps.
-- **🔒 Smart Reserve Vault**: Automated and manual micro-saving triggers to build emergency buffers safely.
-- **🛡️ Responsible AI Design**: Strictly ignores demographic attributes, focusing purely on transactional behavior (velocity, burn rate, entropy) to ensure fair lending and advisory practices.
+## 💡 Our Solution
+**CashCompass** transforms a standard MFS wallet into a **predictive financial health engine**. By analyzing deterministic behavioral data (burn rates, income entropy, spending velocity), CashCompass accurately forecasts cash-flow deficits up to 30 days in advance and proactively guides users away from financial stress using explainable, culturally-grounded AI.
+
+---
+
+## ✨ Key Innovations
+
+### 1. 🔮 Conformal Liquidity Forecasting
+Instead of just showing historical data, CashCompass uses **XGBoost classifiers** to predict the exact probability and date of a liquidity crunch within the next 30 days, providing a 90% confidence conformal prediction band.
+
+### 2. 🤖 Explainable AI (TreeSHAP) Integration
+AI in finance must not be a black box. Our system uses **TreeSHAP** to visually explain to the user *why* their risk is high (e.g., "Food & Discretionary Surge +42% Impact").
+
+### 3. 💬 Bangla-Grounded Copilot (সহজ আর্থিক গাইড)
+A fully localized advisory engine that speaks plain Bengali. It actively **avoids predatory lending recommendations**, instead suggesting pragmatic solutions like digital re-routing, budgeting, and locking a small emergency buffer.
+
+### 4. 🔒 Smart Reserve Vault
+Micro-saving made effortless. Users can configure Auto-Sweep rules (e.g., "Payday Sweep" or "Round Up Change") to systematically build a protected reserve that is shielded from everyday impulse spending.
+
+---
+
+## 🏗️ System Architecture
+
+```mermaid
+graph TD;
+    A[MFS Transaction Ledger] -->|Raw Data| B(Data Generator Pipeline);
+    B -->|Feature Engineering| C{Feature Store};
+    C -->|Rolling Averages, Entropy| D[XGBoost Stress Classifier];
+    D -->|Prediction & SHAP Values| E(FastAPI Backend);
+    E -->|JSON Responses| F[Frontend Dashboard];
+    F -->|User Actions| G(Smart Vault & Copilot);
+```
+
+### 📂 Repository Structure
+- `src/api/` - Production-grade FastAPI backend, routing, and Pydantic schemas.
+- `src/models/` - Machine learning inference layers and model wrappers.
+- `frontend/` - Premium, glassmorphism-inspired Vanilla CSS/JS dashboard UI.
+- `data/generator/` - Synthetic financial ledger generator simulating diverse user personas.
+- `scripts/` - Automated model training and deployment scripts.
+- `notebooks/` - Exploratory Data Analysis (EDA) and model validation metrics.
 
 ---
 
 ## 🛠️ Tech Stack
-- **Frontend**: Custom HTML5, Vanilla CSS3 (Glassmorphism & Custom Animations), Vanilla JS (Zero-dependency modular architecture), Chart.js
-- **Backend Core**: FastAPI (Python), Motor (Async MongoDB), Celery (Background Tasks), Pydantic
-- **Machine Learning**: XGBoost, Scikit-Learn, SHAP, Pandas
-- **Architecture Pattern**: Microservice-ready, Event-driven ETL processing
+| Tier | Technologies Used |
+| :--- | :--- |
+| **Frontend UI** | HTML5, CSS3 (Custom Variables, Animations), Vanilla JS, Chart.js |
+| **Backend API** | Python 3.10+, FastAPI, Uvicorn, Pydantic |
+| **Data & AI** | XGBoost, TreeSHAP, Pandas, Scikit-Learn |
+| **Database** | Motor (Async MongoDB) |
 
 ---
 
-## 📂 Project Structure
+## 🚀 Getting Started
 
-```text
-CashCompass/
-│
-├── data/                                 # Data & Pipeline
-│   ├── generator/                        # Synthetic MFS transaction simulator
-│   └── schemas/                          # Strict JSON contracts
-│
-├── configs/                              # Global Configurations
-│   ├── model_forecaster.yaml             
-│   └── guardrail_policies.yaml           # Anti-predatory system rules
-│
-├── src/                                  # Core Backend System
-│   ├── api/                              # FastAPI Production Service
-│   │   ├── routes/                       # Endpoints (health, forecast, stress)
-│   │   └── dependencies.py               # Async Mongo & Model connections
-│   ├── models/                           # ML & Statistical Models
-│   │   ├── stress_classifier.py          # XGBoost Inference Engine
-│   │   └── forecaster.py                 
-│   ├── data_pipeline/                    # ETL & Feature Engineering
-│   ├── guardrails/                       # Responsible AI policy enforcement
-│   └── copilot/                          # Bangla-grounded NLP engine
-│
-├── frontend/                             # Animated Premium Web UI
-│   ├── assets/                           
-│   ├── css/                              # Modular CSS (animations, components)
-│   ├── js/                               # Services, State Management, Renderers
-│   └── index.html                        # Application Entry
-│
-├── notebooks/                            # ML & Research Artifacts
-│   └── 01_synthetic_data_exploration.ipynb # EDA & XGBoost Training Pipeline
-│
-├── scripts/                              # Operational Scripts
-│   ├── train_all_models.py               # E2E Training execution
-│   └── run_backend.sh                    # Localboot script
-│
-├── tests/                                # Production Test Suite
-├── deployments/                          # Docker / Cloud configs
-└── docs/                                 # Architecture & Logic Chains
-```
+### Prerequisites
+- Python 3.10+
+- Node.js (Optional, for serving the frontend)
+- Git
 
----
-
-## 🚀 Installation & Local Setup
-
-### 1. Clone the repository
+### 1. Clone & Setup Backend
 ```bash
+# Clone the repository
 git clone https://github.com/shuvosinghpartho/CashCompass-Diu_Ai_Hackathon.git
 cd CashCompass-Diu_Ai_Hackathon
-```
 
-### 2. Set up the Python Environment
-```bash
+# Setup virtual environment
 python3 -m venv venv
 source venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-### 3. Run the Backend API
-The FastAPI application serves inference endpoints and health checks.
+### 2. Boot the API Server
 ```bash
-# Ensure you are in the virtual environment
+# Start the FastAPI Uvicorn server
 uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
 ```
+*The API will be available at `http://localhost:8000`. API Docs available at `http://localhost:8000/docs`.*
 
-### 4. Serve the Frontend Dashboard
-In a new terminal window, host the static frontend files:
+### 3. Launch the Frontend Dashboard
+Open a new terminal window:
 ```bash
-cd frontend
+cd CashCompass-Diu_Ai_Hackathon/frontend
 python3 -m http.server 3000
 ```
-Navigate to **`http://localhost:3000`** in your browser.
+*Navigate to `http://localhost:3000` to view the interactive dashboard.*
 
 ---
 
-## ⚖️ Hackathon Compliance
-This project strictly adheres to Responsible AI guidelines:
-- **No Data Bias**: Demographic identities are not ingested into the predictive layers.
-- **Explainability**: Every UI recommendation is backed by auditable SHAP attributions.
-- **Non-Predatory**: The system actively prevents high-interest loan nudges, favoring savings and digital rerouting.
+## 🛡️ Responsible AI & Hackathon Compliance
+CashCompass is built from day one to adhere to **Responsible AI Guidelines**:
+1. **Zero Demographic Bias**: Our ML models strictly ingest behavioral metrics (velocity, timing, burn rate). Features like gender, religion, or ethnicity are programmatically excluded from the training pipeline.
+2. **Transparent Decisioning**: Every risk score is audited via SHAP, ensuring users are never scored negatively without a mathematical, explainable reason.
+3. **Anti-Predatory Guardrails**: The architecture prevents the copilot from ever suggesting micro-loans or high-interest credit lines as a first response to liquidity stress.
 
 <br>
-<p align="center">
-  <i>Developed with ❤️ for the DIU AI Hackathon</i>
-</p>
+
+<div align="center">
+  <sub>Built with ❤️ for the <b>DIU AI Hackathon 2026</b></sub>
+</div>
