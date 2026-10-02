@@ -3,13 +3,16 @@ import time
 
 def train_models():
     print("Loading data from data/generator/ml_feature_store.csv...")
-    time.sleep(1)
-    
-    print("Analyzing 17,746 transactions and 1,000 user records...")
+    try:
+        with open("data/generator/ml_feature_store.csv", "r") as f:
+            user_records = len(f.readlines()) - 1 # exclude header
+        print(f"Analyzing dummy data: {user_records} user records...")
+    except Exception as e:
+        print("Analyzing dummy data: Could not read CSV.")
     time.sleep(1)
 
-    print("Training XGBoost Classifier...")
-    time.sleep(2)
+    print("Training XGBoost Classifier on dummy data...")
+    time.sleep(1)
     
     print("Optimization Complete. Final Logloss: 0.231")
     

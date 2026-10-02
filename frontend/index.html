@@ -21,7 +21,7 @@
 
     <!-- Modular CSS Files -->
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/layout.css?v=4" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/forecast-chart.css" />
     <link rel="stylesheet" href="css/responsive.css" />
@@ -85,6 +85,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="#unified-pull" class="nav-link" aria-label="Deposit Funds" title="Deposit Funds">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                        <span>Unified Deposit</span>
+                        <span class="counter-badge" style="background: var(--brand-blue); color: white;">New</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="#mfs-wallet" class="nav-link" aria-label="MFS Wallet" title="MFS Wallet">
                         <i class="fa-solid fa-mobile-screen-button"></i>
                         <span>MFS Wallet</span>
@@ -92,39 +99,30 @@
                 </li>
             </ul>
 
-            <div class="nav-section-title">DEMO PERSONA SWITCHER</div>
-            <div class="persona-switch-card">
-                <p class="persona-helper">Simulate live behavioral models:</p>
-                <div class="persona-options">
-                    <button class="persona-btn active" id="btnPersonaSalaried" data-persona="salaried" aria-pressed="true">
-                        <div class="avatar-wrap">
-                            <i class="fa-solid fa-user-tie"></i>
-                        </div>
-                        <div class="persona-info">
-                            <strong>Rahim Ahmed</strong>
-                            <span>Salaried (৳25k) • High Risk</span>
-                        </div>
-                    </button>
-
-                    <button class="persona-btn" id="btnPersonaStudent" data-persona="student" aria-pressed="false">
-                        <div class="avatar-wrap">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </div>
-                        <div class="persona-info">
-                            <strong>Tanvir Hasan</strong>
-                            <span>Freelancer • Volatile Cash</span>
-                        </div>
-                    </button>
+            <div class="security-sentinel-widget" style="padding: 16px; margin: 0 16px 16px 16px; background: rgba(11, 153, 107, 0.05); border: 1px solid var(--status-green); border-radius: var(--radius-md);" id="sentinelWidgetContainer">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--status-green); text-transform: uppercase; letter-spacing: 0.5px;" id="sentinelStatusLabel">MODULE 4: Sentinel Active</span>
+                    <i class="fa-solid fa-shield-check" style="color: var(--status-green);" id="sentinelStatusIcon"></i>
                 </div>
+                <h4 style="font-size: 0.95rem; margin-bottom: 4px; color: var(--text-main);" id="sentinelStatusTitle">Sybil Score: 0.04</h4>
+                <p style="font-size: 0.8rem; color: var(--text-neutral); margin-bottom: 12px; line-height: 1.4;" id="sentinelStatusDesc">Clean / Normal Traffic</p>
+                <div id="sentinelFlags" style="display: none; flex-direction: column; gap: 4px; margin-bottom: 12px; font-size: 0.75rem; background: rgba(235, 87, 87, 0.1); padding: 8px; border-radius: 4px; color: #eb5757; border: 1px solid rgba(235, 87, 87, 0.2);">
+                    <span>• Mule Velocity Spike</span>
+                    <span>• Cross-wallet IP collision</span>
+                </div>
+                <button class="btn-action-primary" id="btnSimulateAttack" style="width: 100%; padding: 8px; font-size: 0.8rem; background: var(--bg-surface-hover); color: var(--text-main); border: 1px solid var(--border-subtle); box-shadow: none;">Simulate Layering Attack</button>
             </div>
 
-            <div class="sidebar-footer">
-                <div class="operator-profile">
-                    <div class="op-avatar">CC</div>
-                    <div class="op-details">
-                        <span class="op-name">Demo profile</span>
-                        <span class="op-role">Secure session</span>
+            <div class="sidebar-footer" style="margin-top: auto;">
+                <div class="operator-profile" style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-surface-hover); border-radius: var(--radius-md); border: 1px solid var(--border-subtle); cursor: pointer; transition: all 0.2s;">
+                    <div class="op-avatar" style="width: 44px; height: 44px; border-radius: 50%; background: var(--brand-blue); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 700; flex-shrink: 0;">
+                        <i class="fa-solid fa-user-tie"></i>
                     </div>
+                    <div class="op-details" style="display: flex; flex-direction: column; overflow: hidden;">
+                        <strong class="op-name" style="font-size: 0.95rem; color: var(--text-main); white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">Rahim Ahmed</strong>
+                        <span class="op-role" style="font-size: 0.8rem; color: var(--text-neutral);">+880 1712 *** 421</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="margin-left: auto; color: var(--text-neutral); font-size: 0.8rem;"></i>
                 </div>
             </div>
         </nav>
@@ -198,7 +196,7 @@
                         <i class="fa-solid fa-gauge-high"></i>
                     </div>
                     <div class="kpi-meta">
-                        <span class="kpi-label">Liquidity Crunch Risk</span>
+                        <span class="kpi-label"><strong style="color: var(--brand-blue);">MODULE 2:</strong> Calibrated Liquidity Crunch Predictor</span>
                         <div class="kpi-value-row">
                             <span class="kpi-value text-amber counter" id="valRiskPercent">87</span>
                             <span class="percent-symbol">%</span>
@@ -230,7 +228,7 @@
                     <div class="card-header-flex">
                         <div class="header-info">
                             <div class="title-with-pill">
-                                <h2 class="card-title"><span id="forecastHorizonLabel">30-Day Cash-Flow Horizon</span> & Probabilistic Uncertainty</h2>
+                                <h2 class="card-title"><span class="eyebrow" style="color: var(--brand-blue); font-weight: 700; margin-right: 8px;">MODULE 1:</span> <span id="forecastHorizonLabel">30-Day Cash-Flow Horizon</span> & Probabilistic Uncertainty</h2>
                                 <span class="tech-pill">Conformal Band: 90% Confidence</span>
                             </div>
                             <p class="card-desc">Visualizing actual daily trajectory against predictive p10, p50, and
@@ -276,8 +274,101 @@
                         </div>
                     </div>
                 </div>
-            </section>
-            </section>
+            </section> <!-- End of forecastChart -->
+
+            <!-- MODULE 3: Universal Interoperable Route & Fee Optimizer -->
+            <section class="module3-optimizer-view" aria-labelledby="routeOptimizerTitle">
+                <div class="section-card" style="margin-top: 16px; border: 1px solid var(--border-subtle); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px;">
+                        <div>
+                            <span class="eyebrow" style="color: var(--brand-blue); font-weight: 700;">MODULE 3: INTELLIGENT ROUTER & FEE OPTIMIZER</span>
+                            <h3 class="card-title" id="routeOptimizerTitle">Universal MFS Asset Vault (Binance-Style)</h3>
+                            <p class="card-desc">AI-powered smart withdrawal and cash-out optimizer across all your connected wallets.</p>
+                        </div>
+                        <button class="btn-action-primary" id="btnAutoRebalance" style="padding: 10px 20px; font-size: 0.9rem; background: rgba(11, 153, 107, 0.1); color: var(--status-green); border: 1px solid var(--status-green); box-shadow: none;">
+                            <i class="fa-solid fa-wand-magic-sparkles" style="margin-right: 6px;"></i> One-Click Auto-Rebalance
+                        </button>
+                    </div>
+
+                    <!-- Multi-Wallet Grid -->
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px;">
+                        <div style="padding: 16px; border: 1px solid var(--brand-blue); border-radius: var(--radius-sm); background: rgba(46, 134, 193, 0.05); position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background: var(--brand-blue);"></div>
+                            <span style="font-size: 0.8rem; color: var(--text-neutral); font-weight: 600;">upay Primary (Default)</span>
+                            <div style="font-size: 1.4rem; font-weight: 700; color: var(--brand-blue); margin: 8px 0;">৳14,250</div>
+                            <span style="font-size: 0.75rem; color: var(--text-main); background: var(--bg-surface-hover); padding: 4px 8px; border-radius: 4px;">Fee: 1.4%</span>
+                        </div>
+                        <div style="padding: 16px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: var(--bg-main);">
+                            <span style="font-size: 0.8rem; color: var(--text-neutral); font-weight: 600;">bKash Linked (Synced)</span>
+                            <div style="font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin: 8px 0;">৳6,400</div>
+                            <span style="font-size: 0.75rem; color: var(--text-neutral); background: var(--bg-surface-hover); padding: 4px 8px; border-radius: 4px;">Fee: 1.85%</span>
+                        </div>
+                        <div style="padding: 16px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: var(--bg-main);">
+                            <span style="font-size: 0.8rem; color: var(--text-neutral); font-weight: 600;">Nagad Linked (Synced)</span>
+                            <div style="font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin: 8px 0;">৳3,200</div>
+                            <span style="font-size: 0.75rem; color: var(--text-neutral); background: var(--bg-surface-hover); padding: 4px 8px; border-radius: 4px;">Fee: 1.5%</span>
+                        </div>
+                        <div style="padding: 16px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: var(--bg-main);">
+                            <span style="font-size: 0.8rem; color: var(--text-neutral); font-weight: 600;">Rocket Linked (Synced)</span>
+                            <div style="font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin: 8px 0;">৳1,850</div>
+                            <span style="font-size: 0.75rem; color: var(--text-neutral); background: var(--bg-surface-hover); padding: 4px 8px; border-radius: 4px;">Fee: 1.8%</span>
+                        </div>
+                    </div>
+
+                    <!-- Optimizer Controls -->
+                    <div style="background: var(--bg-surface-hover); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 24px;">
+                        <h4 style="margin-bottom: 16px; font-size: 1rem; color: var(--text-main);"><i class="fa-solid fa-route"></i> Smart Withdrawal / Cash-Out Optimizer</h4>
+                        
+                        <div style="display: flex; gap: 16px; align-items: flex-end;">
+                            <div style="flex: 1;">
+                                <label style="display: block; font-size: 0.85rem; color: var(--text-neutral); margin-bottom: 8px;">Target Cash-Out Amount</label>
+                                <div style="position: relative;">
+                                    <span style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-main); font-weight: 700;">৳</span>
+                                    <input type="number" id="optimizerAmount" value="5000" style="width: 100%; padding: 14px 16px 14px 40px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: var(--bg-main); color: var(--text-main); font-size: 1.1rem; outline: none; font-family: 'Plus Jakarta Sans', sans-serif;" />
+                                </div>
+                            </div>
+                            <button class="btn-action-primary" id="btnCalculateRoute" style="padding: 14px 32px; font-size: 1.05rem;">
+                                <span>Calculate Best Route</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Route Result (Hidden initially) -->
+                        <div id="routeResultContainer" style="display: none; margin-top: 24px; animation: fade-in 0.3s ease;">
+                            <div id="routeLoadingState" style="display: flex; align-items: center; gap: 12px; color: var(--text-neutral);">
+                                <i class="fa-solid fa-spinner fa-spin"></i>
+                                <span>Simulating graph routing engine calculations...</span>
+                            </div>
+                            
+                            <div id="routeSuccessState" style="display: none;">
+                                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px;">
+                                    <div style="padding: 12px; border: 2px solid var(--status-green); border-radius: var(--radius-sm); background: rgba(11, 153, 107, 0.05); position: relative;">
+                                        <div style="position: absolute; top: 8px; right: 8px; color: var(--status-green);"><i class="fa-solid fa-circle-check"></i></div>
+                                        <span style="font-size: 0.8rem; font-weight: 600;">upay Agent/ATM</span>
+                                        <div style="font-size: 1.1rem; font-weight: 700; margin-top: 4px; color: var(--text-main);">Fee: ৳70.00</div>
+                                    </div>
+                                    <div style="padding: 12px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); opacity: 0.7;">
+                                        <span style="font-size: 0.8rem; font-weight: 600;">bKash Agent</span>
+                                        <div style="font-size: 1.1rem; font-weight: 700; margin-top: 4px; color: var(--text-main);">Fee: ৳92.50</div>
+                                    </div>
+                                    <div style="padding: 12px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); opacity: 0.7;">
+                                        <span style="font-size: 0.8rem; font-weight: 600;">Nagad Uddokta</span>
+                                        <div style="font-size: 1.1rem; font-weight: 700; margin-top: 4px; color: var(--text-main);">Fee: ৳75.00</div>
+                                    </div>
+                                    <div style="padding: 12px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); opacity: 0.7;">
+                                        <span style="font-size: 0.8rem; font-weight: 600;">Rocket Agent</span>
+                                        <div style="font-size: 1.1rem; font-weight: 700; margin-top: 4px; color: var(--text-main);">Fee: ৳90.00</div>
+                                    </div>
+                                </div>
+                                <div style="background: rgba(11, 153, 107, 0.1); padding: 12px 16px; border-left: 4px solid var(--status-green); border-radius: 4px; display: flex; align-items: center; gap: 12px;">
+                                    <i class="fa-solid fa-bolt" style="color: var(--status-green);"></i>
+                                    <span style="font-size: 0.95rem; color: var(--text-main); font-weight: 500;"><strong>Recommended Route:</strong> upay Agent / ATM saves you <strong>৳22.50</strong> compared to bKash!</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> <!-- End of Module 3 -->
+            </section> <!-- End of dashboard-view -->
 
             <!-- Bottom Split: XAI SHAP Breakdown & Bangla Grounded Copilot -->
             <section class="page-view insights-grid" id="explainability" data-view="explainability" aria-labelledby="pageTitle">
@@ -286,6 +377,7 @@
                 <div class="section-card xai-card">
                     <div class="card-header-flex">
                         <div>
+                            <span class="eyebrow" style="color: var(--brand-blue); font-weight: 700; display: block; margin-bottom: 4px;">MODULE 5: EXPLAINABLE AI & COPILOT</span>
                             <h2 class="card-title">Why this Crunch? (TreeSHAP XAI)</h2>
                             <p class="card-desc">Deterministic drivers of liquidity deficit without black-box bias.</p>
                         </div>
@@ -511,6 +603,154 @@
                 </div>
             </section>
 
+            <!-- NEW UNIFIED PULL/DEPOSIT VIEW -->
+            <section class="page-view unified-pull-view" id="unified-pull" data-view="unified-pull" aria-labelledby="pullTitle">
+                <div class="mfs-heading" style="margin-bottom: 24px;">
+                    <div>
+                        <span class="eyebrow" style="color: var(--brand-blue); font-weight: 700;">UNIFIED DEPOSIT NETWORK</span>
+                        <h2 class="page-section-title" id="pullTitle">Add Funds from Any Wallet</h2>
+                        <p class="card-desc">Zero fees. Instant transfer. Link your other mobile accounts to bring funds into CashCompass seamlessly.</p>
+                    </div>
+                </div>
+
+                <div class="pull-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 40px;">
+                    
+                    <!-- LEFT COLUMN: Provider & Amount Selection -->
+                    <div style="display: flex; flex-direction: column; gap: 24px;">
+                        <!-- Step 1: Select Network -->
+                        <section class="section-card" style="box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid var(--border-subtle);">
+                            <h3 class="card-title" style="margin-bottom: 16px; display: flex; align-items: center;"><span style="display: inline-block; width: 28px; height: 28px; border-radius: 50%; background: var(--brand-blue); color: white; text-align: center; line-height: 28px; font-size: 0.85rem; margin-right: 12px; font-weight: 700;">1</span> Select Network</h3>
+                            
+                            <div class="mfs-providers-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+                                <button class="mfs-provider-btn active" style="padding: 24px 10px; border: 2px solid #e2136e; border-radius: var(--radius-md); background: rgba(226, 19, 110, 0.04); display: flex; flex-direction: column; align-items: center; gap: 12px; cursor: pointer; position: relative;">
+                                    <div style="position: absolute; top: 10px; right: 10px; color: #e2136e; font-size: 1.1rem;"><i class="fa-solid fa-circle-check"></i></div>
+                                    <div style="width: 54px; height: 54px; border-radius: 50%; background: #e2136e; display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-size: 1.8rem;">b</div>
+                                    <span style="font-weight: 700; font-size: 1rem; color: #e2136e;">bKash</span>
+                                </button>
+                                <button class="mfs-provider-btn" style="padding: 24px 10px; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); background: var(--bg-surface); display: flex; flex-direction: column; align-items: center; gap: 12px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.borderColor='#ed1c24'" onmouseout="this.style.borderColor='var(--border-subtle)'">
+                                    <div style="width: 54px; height: 54px; border-radius: 50%; background: #ed1c24; display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-size: 1.8rem;">N</div>
+                                    <span style="font-weight: 500; font-size: 1rem; color: var(--text-main);">Nagad</span>
+                                </button>
+                                <button class="mfs-provider-btn" style="padding: 24px 10px; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); background: var(--bg-surface); display: flex; flex-direction: column; align-items: center; gap: 12px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.borderColor='#8c1515'" onmouseout="this.style.borderColor='var(--border-subtle)'">
+                                    <div style="width: 54px; height: 54px; border-radius: 50%; background: #8c1515; display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-size: 1.8rem;">R</div>
+                                    <span style="font-weight: 500; font-size: 1rem; color: var(--text-main);">Rocket</span>
+                                </button>
+                                <button class="mfs-provider-btn" style="padding: 24px 10px; border: 1px dashed var(--border-subtle); border-radius: var(--radius-md); background: transparent; display: flex; flex-direction: column; align-items: center; gap: 12px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--bg-surface-hover)'" onmouseout="this.style.background='transparent'">
+                                    <div style="width: 54px; height: 54px; border-radius: 50%; background: var(--bg-surface-hover); display: flex; align-items: center; justify-content: center; color: var(--text-neutral); font-size: 1.3rem;"><i class="fa-solid fa-plus"></i></div>
+                                    <span style="font-weight: 500; font-size: 0.95rem; color: var(--text-neutral);">Link other</span>
+                                </button>
+                            </div>
+                            
+                            <div style="margin-top: 20px; padding: 16px; background: var(--bg-surface-hover); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--border-subtle);">
+                                <div style="display: flex; align-items: center; gap: 14px;">
+                                    <div style="width: 36px; height: 36px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);"><i class="fa-solid fa-link" style="color: var(--text-neutral);"></i></div>
+                                    <div style="display: flex; flex-direction: column;">
+                                        <span style="font-size: 0.8rem; color: var(--text-neutral); margin-bottom: 2px;">Linked verified account</span>
+                                        <strong style="font-size: 1rem; letter-spacing: 0.5px;">+880 1712 *** 421</strong>
+                                    </div>
+                                </div>
+                                <button class="text-button" style="font-size: 0.9rem; font-weight: 600;">Change</button>
+                            </div>
+                        </section>
+
+                        <!-- Step 2: Amount -->
+                        <section class="section-card" style="box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid var(--border-subtle);">
+                            <h3 class="card-title" style="margin-bottom: 20px; display: flex; align-items: center;"><span style="display: inline-block; width: 28px; height: 28px; border-radius: 50%; background: var(--brand-blue); color: white; text-align: center; line-height: 28px; font-size: 0.85rem; margin-right: 12px; font-weight: 700;">2</span> Enter Amount</h3>
+                            
+                            <div style="background: var(--bg-main); border: 2px solid var(--border-subtle); border-radius: var(--radius-md); padding: 30px; text-align: center; margin-bottom: 20px; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--brand-blue)'" onmouseout="this.style.borderColor='var(--border-subtle)'">
+                                <span style="font-size: 2.5rem; color: var(--text-neutral); font-weight: 300; vertical-align: top; margin-top: 5px; display: inline-block;">৳</span>
+                                <input type="number" value="1500" style="background: transparent; border: none; font-size: 3.5rem; font-weight: 700; color: var(--text-main); width: 180px; text-align: center; outline: none; font-family: 'Plus Jakarta Sans', sans-serif;" />
+                            </div>
+                            
+                            <div style="display: flex; gap: 12px; margin-bottom: 30px;">
+                                <button style="flex: 1; padding: 12px; background: var(--bg-surface-hover); border: 1px solid var(--border-subtle); border-radius: 30px; font-weight: 600; cursor: pointer; color: var(--text-main); transition: background 0.2s;" onmouseover="this.style.background='var(--border-subtle)'" onmouseout="this.style.background='var(--bg-surface-hover)'">+৳500</button>
+                                <button style="flex: 1; padding: 12px; background: var(--bg-surface-hover); border: 1px solid var(--border-subtle); border-radius: 30px; font-weight: 600; cursor: pointer; color: var(--text-main); transition: background 0.2s;" onmouseover="this.style.background='var(--border-subtle)'" onmouseout="this.style.background='var(--bg-surface-hover)'">+৳1,000</button>
+                                <button style="flex: 1; padding: 12px; background: var(--bg-surface-hover); border: 1px solid var(--border-subtle); border-radius: 30px; font-weight: 600; cursor: pointer; color: var(--text-main); transition: background 0.2s;" onmouseover="this.style.background='var(--border-subtle)'" onmouseout="this.style.background='var(--bg-surface-hover)'">+৳5,000</button>
+                                <button style="flex: 1; padding: 12px; background: rgba(11, 153, 107, 0.1); border: 1px solid var(--status-green); color: var(--status-green); border-radius: 30px; font-weight: 700; cursor: pointer;">Max Limit</button>
+                            </div>
+
+                            <button class="btn-action-primary" style="width: 100%; padding: 18px; font-size: 1.15rem; font-weight: 700; border-radius: var(--radius-md); box-shadow: 0 8px 24px rgba(11, 153, 107, 0.25);" onclick="document.getElementById('pullOtpSection').style.display='block'; window.scrollTo({top: document.getElementById('pullOtpSection').offsetTop, behavior: 'smooth'});"><i class="fa-solid fa-arrow-down" style="margin-right: 10px;"></i> Proceed to Transfer</button>
+                        </section>
+                        
+                        <!-- Step 3: Mock OTP Verification (Hidden initially) -->
+                        <section class="section-card" id="pullOtpSection" style="display: none; border-color: var(--brand-blue); border-width: 2px; box-shadow: 0 8px 30px rgba(46, 134, 193, 0.15);">
+                            <h3 class="card-title" style="margin-bottom: 12px; color: var(--brand-blue); display: flex; align-items: center;"><i class="fa-solid fa-shield-halved" style="margin-right: 10px; font-size: 1.2rem;"></i> Security Verification</h3>
+                            <p class="card-desc" style="margin-bottom: 24px; font-size: 0.95rem;">Enter the 6-digit OTP sent to your linked bKash number <strong>(+880 1712 *** 421)</strong> to authorize this pull request.</p>
+                            
+                            <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 30px;">
+                                <input type="text" maxlength="1" value="4" style="width: 50px; height: 60px; font-size: 1.8rem; font-weight: 600; text-align: center; border: 1px solid var(--border-subtle); border-radius: 10px; background: var(--bg-main);" />
+                                <input type="text" maxlength="1" value="0" style="width: 50px; height: 60px; font-size: 1.8rem; font-weight: 600; text-align: center; border: 1px solid var(--border-subtle); border-radius: 10px; background: var(--bg-main);" />
+                                <input type="text" maxlength="1" value="2" style="width: 50px; height: 60px; font-size: 1.8rem; font-weight: 600; text-align: center; border: 1px solid var(--border-subtle); border-radius: 10px; background: var(--bg-main);" />
+                                <input type="text" maxlength="1" value="9" style="width: 50px; height: 60px; font-size: 1.8rem; font-weight: 600; text-align: center; border: 1px solid var(--border-subtle); border-radius: 10px; background: var(--bg-main);" />
+                                <input type="text" maxlength="1" style="width: 50px; height: 60px; font-size: 1.8rem; font-weight: 600; text-align: center; border: 2px solid var(--brand-blue); border-radius: 10px; background: white; outline: none; box-shadow: 0 0 0 4px rgba(46, 134, 193, 0.1);" autofocus />
+                                <input type="text" maxlength="1" style="width: 50px; height: 60px; font-size: 1.8rem; font-weight: 600; text-align: center; border: 1px solid var(--border-subtle); border-radius: 10px; background: var(--bg-main);" />
+                            </div>
+                            
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+                                <span style="font-size: 0.95rem; color: var(--text-neutral); font-weight: 500;">Resend code in <span style="color: var(--text-main);">0:45</span></span>
+                                <button class="btn-action-primary" style="padding: 12px 28px; font-size: 1.05rem; box-shadow: 0 4px 15px rgba(11, 153, 107, 0.3);" onclick="alert('Transaction Successful! ৳1,500 added to CashCompass.');"><i class="fa-solid fa-check" style="margin-right: 8px;"></i> Verify & Pull ৳1,500</button>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- RIGHT COLUMN: Summary & Balances -->
+                    <div style="display: flex; flex-direction: column; gap: 24px;">
+                        <section class="section-card" style="background: var(--bg-surface); border: 1px solid var(--border-subtle); box-shadow: 0 8px 30px rgba(0,0,0,0.02);">
+                            <h3 class="card-title" style="margin-bottom: 24px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">Transfer Summary</h3>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 18px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: var(--text-neutral); font-size: 1.05rem;">Transfer Amount</span>
+                                    <strong style="font-size: 1.2rem;">৳1,500.00</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: var(--text-neutral); font-size: 1.05rem;">Platform Fee</span>
+                                    <span style="color: var(--status-green); font-weight: 700; padding: 4px 10px; background: rgba(11, 153, 107, 0.1); border-radius: 6px; font-size: 0.95rem;">৳0.00 (Free)</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: var(--text-neutral); font-size: 1.05rem;">Network Fee</span>
+                                    <strong style="text-decoration: line-through; color: var(--text-neutral); font-size: 1.05rem;">৳27.75</strong>
+                                </div>
+                                <div style="height: 1px; background: var(--border-subtle); margin: 4px 0;"></div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-weight: 700; font-size: 1.1rem;">Total to receive</span>
+                                    <strong style="font-size: 1.5rem; color: var(--brand-blue);">৳1,500.00</strong>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 30px; padding: 20px; background: rgba(46, 134, 193, 0.05); border-left: 4px solid var(--brand-blue); border-radius: 0 8px 8px 0;">
+                                <div style="display: flex; gap: 14px; align-items: flex-start;">
+                                    <i class="fa-solid fa-circle-info" style="color: var(--brand-blue); font-size: 1.2rem; margin-top: 2px;"></i>
+                                    <p style="font-size: 0.9rem; color: var(--text-main); margin: 0; line-height: 1.5; font-weight: 500;">By pulling funds into CashCompass, you bypass standard 1.85% cash-out fees when paying for digital services via our app.</p>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section class="section-card" style="border: 1px solid var(--border-subtle);">
+                            <h3 class="card-title" style="margin-bottom: 20px; font-size: 1.05rem;"><i class="fa-solid fa-scale-balanced" style="margin-right: 8px;"></i> Simulated Balances</h3>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: var(--bg-main);">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 30px; height: 30px; border-radius: 50%; background: #e2136e; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.85rem;">b</div>
+                                        <span style="font-size: 0.95rem; font-weight: 500;">bKash (After)</span>
+                                    </div>
+                                    <strong style="font-size: 1.05rem;">৳2,750</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px; border: 1px solid var(--brand-blue); border-radius: var(--radius-sm); background: rgba(46, 134, 193, 0.04); position: relative; overflow: hidden;">
+                                    <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--brand-blue);"></div>
+                                    <div style="display: flex; align-items: center; gap: 12px; padding-left: 8px;">
+                                        <div style="width: 30px; height: 30px; border-radius: 50%; background: var(--brand-blue); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.85rem;">C</div>
+                                        <span style="font-size: 0.95rem; font-weight: 700;">CashCompass (After)</span>
+                                    </div>
+                                    <strong style="font-size: 1.1rem; color: var(--brand-blue);">৳15,750</strong>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
             <section class="page-view vault-view" id="reserve-vault" data-view="reserve-vault" aria-labelledby="vaultTitle">
                 <div class="view-intro"><span class="eyebrow">RESERVE VAULT</span><h2 class="page-section-title">Protect a cash buffer</h2><p class="card-desc">Set aside a small reserve for unexpected expenses.</p></div>
                 
@@ -645,7 +885,7 @@
     <script src="js/components/shap_breakdown.js"></script>
     <script src="js/components/bangla_coach.js"></script>
     <script src="js/components/action_vault.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/app.js?v=4"></script>
 </body>
 
 </html>

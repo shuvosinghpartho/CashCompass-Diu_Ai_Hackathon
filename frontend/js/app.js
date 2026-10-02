@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'reserve-vault': { title: 'Reserve vault', breadcrumb: 'Protected savings' },
     coach: { title: 'Financial coach', breadcrumb: 'Personal guidance' },
     audit: { title: 'Responsible AI', breadcrumb: 'Trust & transparency' },
+    'unified-pull': { title: 'Unified Deposit', breadcrumb: 'MFS Integrations' },
     'mfs-wallet': { title: 'Mobile wallet', breadcrumb: 'Accounts & activity' }
   };
 
@@ -280,6 +281,76 @@ document.addEventListener('DOMContentLoaded', () => {
   if (digitalPayButton) {
     digitalPayButton.addEventListener('click', () => {
       document.querySelector('[data-mfs-action="pay"]')?.click();
+    });
+  }
+
+  // --- MODULE 3: ROUTER OPTIMIZER ---
+  const btnCalculateRoute = document.getElementById('btnCalculateRoute');
+  const routeResultContainer = document.getElementById('routeResultContainer');
+  const routeLoadingState = document.getElementById('routeLoadingState');
+  const routeSuccessState = document.getElementById('routeSuccessState');
+  const btnAutoRebalance = document.getElementById('btnAutoRebalance');
+
+  if (btnCalculateRoute && routeResultContainer) {
+    btnCalculateRoute.addEventListener('click', () => {
+      routeResultContainer.style.display = 'block';
+      routeLoadingState.style.display = 'flex';
+      routeSuccessState.style.display = 'none';
+      
+      setTimeout(() => {
+        routeLoadingState.style.display = 'none';
+        routeSuccessState.style.display = 'block';
+      }, 1500); // Simulate calculation delay
+    });
+  }
+
+  if (btnAutoRebalance) {
+    btnAutoRebalance.addEventListener('click', () => {
+      DOM.showToast('Simulating One-Click Auto-Rebalance across 4 linked wallets...', 'info');
+      setTimeout(() => DOM.showToast('Rebalance successful. Balances optimized.', 'success'), 2000);
+    });
+  }
+
+  // --- MODULE 4: SECURITY SENTINEL ---
+  const btnSimulateAttack = document.getElementById('btnSimulateAttack');
+  const sentinelWidgetContainer = document.getElementById('sentinelWidgetContainer');
+  const sentinelStatusLabel = document.getElementById('sentinelStatusLabel');
+  const sentinelStatusIcon = document.getElementById('sentinelStatusIcon');
+  const sentinelStatusTitle = document.getElementById('sentinelStatusTitle');
+  const sentinelStatusDesc = document.getElementById('sentinelStatusDesc');
+  const sentinelFlags = document.getElementById('sentinelFlags');
+
+  if (btnSimulateAttack) {
+    btnSimulateAttack.addEventListener('click', () => {
+      const isAttack = btnSimulateAttack.textContent.includes('Simulate');
+      
+      if (isAttack) {
+        sentinelWidgetContainer.style.backgroundColor = 'rgba(235, 87, 87, 0.05)';
+        sentinelWidgetContainer.style.borderColor = '#eb5757';
+        sentinelStatusLabel.textContent = 'ALERT ACTIVE';
+        sentinelStatusLabel.style.color = '#eb5757';
+        sentinelStatusIcon.className = 'fa-solid fa-triangle-exclamation';
+        sentinelStatusIcon.style.color = '#eb5757';
+        sentinelStatusTitle.textContent = 'Sybil Score: 0.94';
+        sentinelStatusTitle.style.color = '#eb5757';
+        sentinelStatusDesc.textContent = 'ALERT: Rapid Micro-Cashout Detected across 3 linked wallets';
+        sentinelStatusDesc.style.color = '#eb5757';
+        sentinelFlags.style.display = 'flex';
+        btnSimulateAttack.textContent = 'Reset / Clear Simulation';
+      } else {
+        sentinelWidgetContainer.style.backgroundColor = 'rgba(11, 153, 107, 0.05)';
+        sentinelWidgetContainer.style.borderColor = 'var(--status-green)';
+        sentinelStatusLabel.textContent = 'Sentinel Active';
+        sentinelStatusLabel.style.color = 'var(--status-green)';
+        sentinelStatusIcon.className = 'fa-solid fa-shield-check';
+        sentinelStatusIcon.style.color = 'var(--status-green)';
+        sentinelStatusTitle.textContent = 'Sybil Score: 0.04';
+        sentinelStatusTitle.style.color = 'var(--text-main)';
+        sentinelStatusDesc.textContent = 'Clean / Normal Traffic';
+        sentinelStatusDesc.style.color = 'var(--text-neutral)';
+        sentinelFlags.style.display = 'none';
+        btnSimulateAttack.textContent = 'Simulate Layering Attack';
+      }
     });
   }
 

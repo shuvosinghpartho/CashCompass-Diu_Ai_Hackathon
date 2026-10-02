@@ -3,7 +3,7 @@ import datetime
 import math
 import os
 
-NUM_USERS = 1000
+NUM_USERS = 50
 DAYS = 30
 START_DATE = datetime.date(2026, 10, 1)
 

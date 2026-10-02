@@ -778,7 +778,9 @@ body[data-view="forecast"] .page-action {
   min-width: 0;
   min-height: 0;
   grid-row: 2;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 32px;
 }
 
 body[data-view="forecast"] .main-content > .page-view[data-view="forecast"] {
@@ -813,6 +815,11 @@ body[data-view="reserve-vault"] .main-content > .page-view[data-view="reserve-va
 body[data-view="audit"] .main-content > .page-view[data-view="audit"] {
   display: grid;
   align-content: center;
+}
+
+body[data-view="unified-pull"] .main-content > .page-view[data-view="unified-pull"] {
+  display: block;
+  overflow-y: auto;
 }
 
 .main-content > :not(.content-header):not(.page-view):not(.transaction-dialog) {

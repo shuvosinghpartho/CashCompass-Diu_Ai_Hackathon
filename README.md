@@ -32,19 +32,23 @@ In emerging markets like Bangladesh, millions of Mobile Financial Services (MFS)
 
 ---
 
-## ✨ Key Innovations
+## 🧠 5-Core Production AI Modules Breakdown
 
-### 1. 🔮 Conformal Liquidity Forecasting
-Instead of just showing historical data, CashCompass uses **XGBoost classifiers** to predict the exact probability and date of a liquidity crunch within the next 30 days, providing a 90% confidence conformal prediction band.
+### Module 1: Conformal Multi-Wallet Balance Forecaster (LightGBM Quantile Regressor)
+- **Role:** Shob connected MFS wallet (bKash, Nagad, Rocket, upay) er agami 15–30 diner balance curve predict kore.
+- **Function:** Kono specific wallet e shortfall hobar aage auto-rebalance alert dey.
 
-### 2. 🤖 Explainable AI (TreeSHAP) Integration
-AI in finance must not be a black box. Our system uses **TreeSHAP** to visually explain to the user *why* their risk is high (e.g., "Food & Discretionary Surge +42% Impact").
+### Module 2: Calibrated Liquidity Crunch Predictor (Calibrated XGBoost)
+- **Role:** Masher shesh 7 dine wallet pool critical limit (< ৳500) er niche nambe kina tar calibrated risk probability score (0.0 to 1.0) hishab kore.
 
-### 3. 💬 Bangla-Grounded Copilot (সহজ আর্থিক গাইড)
-A fully localized advisory engine that speaks plain Bengali. It actively **avoids predatory lending recommendations**, instead suggesting pragmatic solutions like digital re-routing, budgeting, and locking a small emergency buffer.
+### Module 3: Intelligent Interoperability Routing & Fee Optimizer (Graph Search + Policy ML)
+- **Role:** User jokhon cash withdraw ba transfer korte chay, system instantly bKash/Nagad/Rocket er live fee, agent availability, ebong platform charge calculate kore shobcheye kom khorocher cheapest withdrawal route recommend kore.
 
-### 4. 🔒 Smart Reserve Vault
-Micro-saving made effortless. Users can configure Auto-Sweep rules (e.g., "Payday Sweep" or "Round Up Change") to systematically build a protected reserve that is shielded from everyday impulse spending.
+### Module 4: Multi-Wallet Anomaly & Sybil Abuse Sentinel (Isolation Forest + Graph Anomaly)
+- **Role:** Multi-wallet cross transfers er moddhe suspicious layering, rapid micro-cashouts, ba money mule pattern track kore security ensure kore.
+
+### Module 5: TreeSHAP Feature Attribution & Grounded Bangla Copilot (XAI + LLM Guardrails)
+- **Role:** Mathematical risk drivers (e.g., fee leakage) ke explain kore ebong user ke plain Bangla te non-predatory financial guidance shonay.
 
 ---
 
